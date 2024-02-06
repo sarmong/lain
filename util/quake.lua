@@ -136,6 +136,13 @@ function quake:toggle()
      end
 end
 
+function quake:close()
+     if self.followtag then self.screen = awful.screen.focused() end
+     local current_tag = self.screen.selected_tag
+     self.visible = false
+     self:display()
+end
+
 function quake.new(conf)
     conf = conf or {}
 
